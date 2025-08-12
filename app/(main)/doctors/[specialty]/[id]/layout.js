@@ -7,8 +7,8 @@ export async function generateMetadata({ params }) {
 
   const { doctor } = await getDoctorById(id);
   return {
-    title: `Dr. ${doctor.name} - MediMeet`,
-    description: `Book an appointment with Dr. ${doctor.name}, ${doctor.specialty} specialist with ${doctor.experience} years of experience.`,
+    title: `${doctor.name} - AuraHub`,
+    description: `Agendar encontro com ${doctor.name}, especialista em ${doctor.specialty} e com ${doctor.experience} anos de experiência.`,
   };
 }
 
@@ -22,9 +22,9 @@ export default async function DoctorProfileLayout({ children, params }) {
     <div className="container mx-auto">
       <PageHeader
         // icon={<Stethoscope />}
-        title={"Dr. " + doctor.name}
+        title={doctor.name}
         backLink={`/doctors/${doctor.specialty}`}
-        backLabel={`Back to ${doctor.specialty}`}
+        backLabel={`Voltar para ${doctor.specialty}`}
       />
 
       {children}

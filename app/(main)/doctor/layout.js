@@ -2,8 +2,8 @@ import { Stethoscope } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 
 export const metadata = {
-  title: "Doctor Dashboard - MediMeet",
-  description: "Manage your appointments and availability",
+  title: "Dashboard Profissional - AuraHub",
+  description: "Gerenciar consultas, pacientes e perfil",
 };
 
 export default async function DoctorDashboardLayout({ children }) {

@@ -2,6 +2,8 @@ import { redirect } from "next/navigation";
 import { getDoctorsBySpecialty } from "@/actions/doctors-listing";
 import { DoctorCard } from "../components/doctor-card";
 import { PageHeader } from "@/components/page-header";
+import { Card, CardContent } from "@/components/ui/card";
+import { Stethoscope } from "lucide-react";
 
 export default async function DoctorSpecialtyPage({ params }) {
   const { specialty } = await params;
@@ -23,7 +25,7 @@ export default async function DoctorSpecialtyPage({ params }) {
       <PageHeader
         title={specialty.split("%20").join(" ")}
         backLink="/doctors"
-        backLabel="All Specialties"
+        backLabel="Todas Especialidades"
       />
 
       {doctors && doctors.length > 0 ? (
@@ -33,15 +35,21 @@ export default async function DoctorSpecialtyPage({ params }) {
           ))}
         </div>
       ) : (
-        <div className="text-center py-12">
-          <h3 className="text-xl font-medium text-white mb-2">
-            No doctors available
-          </h3>
-          <p className="text-muted-foreground">
-            There are currently no verified doctors in this specialty. Please
-            check back later or choose another specialty.
-          </p>
-        </div>
+        <Card className="border-1 border-(--black04)/50 hover:bg-(--white02)/70">
+          <CardContent>
+            <div className="text-center py-12">
+              <Stethoscope className="h-12 w-12 mx-auto text-muted-foreground mb-3" />
+              <h3 className="text-xl font-medium text-muted-foreground mb-2">
+                Nenhum profissional encontrado
+              </h3>
+              <p className="text-muted-foreground">
+                Atualmente não há profissionais verificados nesta especialidade.
+                Por favor, verifique novamente mais tarde ou escolha outra
+                especialidade.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
       )}
     </div>
   );

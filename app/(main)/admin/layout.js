@@ -5,8 +5,8 @@ import { ShieldCheck, AlertCircle, Users, CreditCard } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 
 export const metadata = {
-  title: "Admin Settings - MediMeet",
-  description: "Manage doctors, patients, and platform settings",
+  title: "Dashboard Admin - AuraHub",
+  description: "Gerenciar usuários, pagamentos e verificações",
 };
 
 export default async function AdminLayout({ children }) {
@@ -20,7 +20,7 @@ export default async function AdminLayout({ children }) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <PageHeader icon={<ShieldCheck />} title="Admin Settings" />
+      <PageHeader icon={<ShieldCheck />} title="Dashboard Admin" />
 
       {/* Vertical tabs on larger screens / Horizontal tabs on mobile */}
       <Tabs
@@ -33,21 +33,21 @@ export default async function AdminLayout({ children }) {
             className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full"
           >
             <AlertCircle className="h-4 w-4 mr-2 hidden md:inline" />
-            <span>Pending Verification</span>
+            <span>Verificação pendente</span>
           </TabsTrigger>
           <TabsTrigger
             value="doctors"
             className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full"
           >
             <Users className="h-4 w-4 mr-2 hidden md:inline" />
-            <span>Doctors</span>
+            <span>Profissionais</span>
           </TabsTrigger>
           <TabsTrigger
             value="payouts"
             className="flex-1 md:flex md:items-center md:justify-start md:px-4 md:py-3 w-full"
           >
             <CreditCard className="h-4 w-4 mr-2 hidden md:inline" />
-            <span>Payouts</span>
+            <span>Pagamentos</span>
           </TabsTrigger>
         </TabsList>
         <div className="md:col-span-3">{children}</div>

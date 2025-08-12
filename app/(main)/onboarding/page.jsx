@@ -90,56 +90,56 @@ export default function OnboardingPage() {
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card
-          className="border-emerald-900/20 hover:border-emerald-700/40 cursor-pointer transition-all"
+          className="border-(--primary03)/50 hover:border-(--primary03) cursor-pointer transition-all"
           onClick={() => !loading && handlePatientSelection()}
         >
           <CardContent className="pt-6 pb-6 flex flex-col items-center text-center">
-            <div className="p-4 bg-emerald-900/20 rounded-full mb-4">
-              <User className="h-8 w-8 text-emerald-400" />
+            <div className="p-4 bg-(--primary03)/30 rounded-full mb-4">
+              <User className="h-8 w-8 text-(--primary01)" />
             </div>
-            <CardTitle className="text-xl font-semibold text-white mb-2">
-              Join as a Patient
+            <CardTitle className="text-xl font-semibold text-(--black01) mb-2">
+              Acessar como Paciente
             </CardTitle>
             <CardDescription className="mb-4">
-              Book appointments, consult with doctors, and manage your
-              healthcare journey
+              Agendar consultas, gerenciar seus atendimentos e acessar
+              resultados médicos
             </CardDescription>
             <Button
-              className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700"
+              className="w-full h-11 mt-2 bg-(--primary01) hover:bg-(--primary02)"
               disabled={loading}
             >
               {loading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Processing...
+                  Processando...
                 </>
               ) : (
-                "Continue as Patient"
+                "Continuar como Paciente"
               )}
             </Button>
           </CardContent>
         </Card>
 
         <Card
-          className="border-emerald-900/20 hover:border-emerald-700/40 cursor-pointer transition-all"
+          className="border-(--primary03)/50 hover:border-(--primary03) cursor-pointer transition-all"
           onClick={() => !loading && setStep("doctor-form")}
         >
           <CardContent className="pt-6 pb-6 flex flex-col items-center text-center">
-            <div className="p-4 bg-emerald-900/20 rounded-full mb-4">
-              <Stethoscope className="h-8 w-8 text-emerald-400" />
+            <div className="p-4 bg-(--primary03)/30 rounded-full mb-4">
+              <Stethoscope className="h-8 w-8 text-(--primary01)" />
             </div>
-            <CardTitle className="text-xl font-semibold text-white mb-2">
-              Join as a Doctor
+            <CardTitle className="text-xl font-semibold text-(--black01) mb-2">
+              Acessar como Profissional
             </CardTitle>
             <CardDescription className="mb-4">
-              Create your professional profile, set your availability, and
-              provide consultations
+              Criar seu perfil profissional, definir disponibilidade e gerenciar
+              consultas
             </CardDescription>
             <Button
-              className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700"
+              className="w-full h-11 mt-2 bg-(--primary01) hover:bg-(--primary02)"
               disabled={loading}
             >
-              Continue as Doctor
+              Continuar como Profissional
             </Button>
           </CardContent>
         </Card>

@@ -2,8 +2,8 @@ import { getCurrentUser } from "@/actions/onboarding";
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Onboarding - MediMeet",
-  description: "Complete your profile to get started with MediMeet",
+  title: "Onboarding - AuraHub",
+  description: "Complete seu perfil para acessar nossos serviços",
 };
 
 export default async function OnboardingLayout({ children }) {
@@ -30,11 +30,11 @@ export default async function OnboardingLayout({ children }) {
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-white mb-2">
-            Welcome to MediMeet
+          <h1 className="text-3xl font-bold text-(--black01) mb-2">
+            Bem-vindo(a) ao Aura
           </h1>
-          <p className="text-muted-foreground text-lg">
-            Tell us how you want to use the platform
+          <p className="text-(--black01)/50 text-md">
+            Complete seu perfil para começar a usar nossos serviços
           </p>
         </div>
 

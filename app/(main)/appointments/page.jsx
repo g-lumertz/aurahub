@@ -16,19 +16,19 @@ export default async function PatientAppointmentsPage() {
   const { appointments, error } = await getPatientAppointments();
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-12">
       <PageHeader
         icon={<Calendar />}
-        title="My Appointments"
+        title="Agendamentos"
         backLink="/doctors"
-        backLabel="Find Doctors"
+        backLabel="Buscar Profissionais"
       />
 
-      <Card className="border-emerald-900/20">
+      <Card className="border-1 border-(--black04)/50 hover:bg-(--white02)/70">
         <CardHeader>
-          <CardTitle className="text-xl font-bold text-white flex items-center">
-            <Calendar className="h-5 w-5 mr-2 text-emerald-400" />
-            Your Scheduled Appointments
+          <CardTitle className="text-xl font-bold text-(--primary02) flex items-center">
+            {/* <Calendar className="h-5 w-5 mr-2 text-(--primary02)" /> */}
+            Seus serviços agendados
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -49,12 +49,12 @@ export default async function PatientAppointmentsPage() {
           ) : (
             <div className="text-center py-8">
               <Calendar className="h-12 w-12 mx-auto text-muted-foreground mb-3" />
-              <h3 className="text-xl font-medium text-white mb-2">
-                No appointments scheduled
+              <h3 className="text-xl font-medium text-muted-foreground mb-2">
+                Sem agendamentos registrados
               </h3>
               <p className="text-muted-foreground">
-                You don&apos;t have any appointments scheduled yet. Browse our
-                doctors and book your first consultation.
+                Você ainda não tem agendamentos registrados. Navegue pelos
+                nossos profissionais e agende sua primeira consulta.
               </p>
             </div>
           )}

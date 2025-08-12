@@ -21,7 +21,7 @@ export default async function Header() {
   }
 
   return (
-    <header className="fixed top-0 w-full border-b-1 border-b-card bg-background z-10">
+    <header className="fixed top-0 w-full border-b-1 border-b-(--white04) bg-background z-10">
       <nav className="container mx-auto px-4 h-[82px] flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 cursor-pointer">
           <Image
@@ -44,9 +44,9 @@ export default async function Header() {
                   className="hidden md:inline-flex items-center gap-2"
                 >
                   <ShieldCheck className="h-4 w-4" />
-                  Admin Dashboard
+                  Dashboard Admin
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                <Button variant="ghost" className="md:hidden w-9 h-9 p-0">
                   <ShieldCheck className="h-4 w-4" />
                 </Button>
               </Link>
@@ -60,9 +60,9 @@ export default async function Header() {
                   className="hidden md:inline-flex items-center gap-2"
                 >
                   <Stethoscope className="h-4 w-4" />
-                  Doctor Dashboard
+                  Dashboard
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                <Button variant="ghost" className="md:hidden w-9 h-9 p-0">
                   <Stethoscope className="h-4 w-4" />
                 </Button>
               </Link>
@@ -76,9 +76,9 @@ export default async function Header() {
                   className="hidden md:inline-flex items-center gap-2"
                 >
                   <Calendar className="h-4 w-4" />
-                  My Appointments
+                  Agendamentos
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                <Button variant="outline" className="md:hidden w-9 h-9 p-0">
                   <Calendar className="h-4 w-4" />
                 </Button>
               </Link>
@@ -92,9 +92,9 @@ export default async function Header() {
                   className="hidden md:inline-flex items-center gap-2"
                 >
                   <User className="h-4 w-4" />
-                  Complete Profile
+                  Completar Perfil
                 </Button>
-                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                <Button variant="ghost" className="md:hidden w-9 h-9 p-0">
                   <User className="h-4 w-4" />
                 </Button>
               </Link>
@@ -104,22 +104,22 @@ export default async function Header() {
           {(!user || user?.role !== "ADMIN") && (
             <Link href={user?.role === "PATIENT" ? "/pricing" : "/doctor"}>
               <Badge
-                variant="outline"
-                className="h-9 bg-emerald-900/20 border-emerald-700/30 px-3 py-1 flex items-center gap-2"
+                variant="default"
+                className="h-9 px-3 py-1 flex items-center gap-2"
               >
-                <CreditCard className="h-3.5 w-3.5 text-emerald-400" />
-                <span className="text-emerald-400">
+                <CreditCard className="h-3.5 w-3.5 text-(--white00)" />
+                <span className="text-(--white00)">
                   {user && user.role !== "ADMIN" ? (
                     <>
                       {user.credits}{" "}
                       <span className="hidden md:inline">
                         {user?.role === "PATIENT"
-                          ? "Credits"
-                          : "Earned Credits"}
+                          ? "Créditos"
+                          : "Créditos Ganhos"}
                       </span>
                     </>
                   ) : (
-                    <>Pricing</>
+                    <>Valores</>
                   )}
                 </span>
               </Badge>
@@ -128,7 +128,7 @@ export default async function Header() {
 
           <SignedOut>
             <SignInButton>
-              <Button variant="secondary">Sign In</Button>
+              <Button variant="default">Entrar</Button>
             </SignInButton>
           </SignedOut>
 
@@ -136,7 +136,7 @@ export default async function Header() {
             <UserButton
               appearance={{
                 elements: {
-                  avatarBox: "w-10 h-10",
+                  avatarBox: "w-9 h-9",
                   userButtonPopoverCard: "shadow-xl",
                   userPreviewMainIdentifier: "font-semibold",
                 },
